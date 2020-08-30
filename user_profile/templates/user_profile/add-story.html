@@ -1,0 +1,27 @@
+{% extends 'user_profile/base.html' %}
+
+{% block unpadded-body %}
+<div class="unpadded-body">
+    <div class="left">
+        <form method="POST" id="form">
+            {% csrf_token %}
+            <label for="heading">Title</label>
+            <textarea name="heading" id="" cols="100" rows="1"></textarea>
+            <label for="body">Body</label>
+            <textarea name="body" id="" cols="100" rows="10"></textarea>
+    
+            
+            <button class="create-story-btn" onclick="">Create Story</button>
+        </form>
+        <div class="question">
+            <button onclick="newQuestion()" on>Add question</button>
+        </div>
+
+    </div>
+    <div class="right questions">
+
+    </div>
+
+</div>
+    
+{% endblock unpadded-body %}
