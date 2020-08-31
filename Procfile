@@ -1,1 +1,1 @@
-web: gunicorn movierater.wsgi --log-file -
+web: gunicorn mcq_project.wsgi --log-file -
