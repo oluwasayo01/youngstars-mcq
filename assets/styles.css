@@ -69,6 +69,7 @@ li {
 
 li.option {
     list-style-type: none;
+    padding: 5px 0 5px 0;
 }
 
 .add-body {
@@ -108,4 +109,5 @@ textarea[name="heading"] {
 
 .create-story-btn {
     /* justify-content: end; */
+    
 }

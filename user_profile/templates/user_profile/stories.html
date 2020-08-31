@@ -8,7 +8,8 @@
             {% for story in stories %}
                 <li class="story">
                     <h2 class="story-title">{{ story.heading }}</h2>
-                    <button class="story-btn" onclick="handleClick(this)" value="{{ story.id }}">Take Test</button>
+                    <button class="quiz-btn" onclick="handleClick(this)" value="{{ story.id }}">Take Test</button>
+                    <button id="delete" onclick="deleteItem(this)" value="{{ story.id }}">Delete</button>
                 </li>
                 
             {% endfor %}

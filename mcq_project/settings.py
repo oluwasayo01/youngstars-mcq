@@ -2,6 +2,7 @@ from .db import DB
 from pathlib import Path
 from decouple import config
 import os
+from dj_database_url import parse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -48,6 +49,7 @@ ROOT_URLCONF = 'mcq_project.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
+    "http://127.0.0.1:8000"
 ]
 
 TEMPLATES = [
@@ -71,8 +73,14 @@ WSGI_APPLICATION = 'mcq_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+if DEBUG:
+    DATABASES = DB.config(debug=DEBUG)
+else:
+    default_db_url = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-DATABASES = DB.config(debug=DEBUG)
+    DATABASES = {
+        'default': config('DATABASE_URL', default=default_db_url, cast=parse)
+    }
 
 
 # Password validation

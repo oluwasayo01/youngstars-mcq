@@ -4,7 +4,6 @@
 <div class="add-body">
     <div class="left">
         <div id="form">
-            {% csrf_token %}
             <label for="heading">Title</label>
             <textarea name="heading" id="heading" cols="80" rows="2"></textarea>
             <label for="body">Body</label>
@@ -13,13 +12,21 @@
             
             <button class="create-story-btn" onclick="createStory()">Create Story</button>
         </div>
-        <!-- <div class="question">
-            <button onclick="newQuestion()" on>Add question</button>
-        </div> -->
 
     </div>
-    <div class="right questions">
-
+    <div class="right questions" onl>
+        {% for content in all_questions %}
+            <div>
+                <h3>{{ content.question}}</h3>
+                <div>
+                    {% for answer in content.answers  %}
+                        <input type="radio" id="{{ answer }}" name="{{ foorloop.counter }}" value="{{ answer }}">
+                        <label for="{{ answer}}"> {{ answer }}</label><br>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        {% endfor %}
     </div>
 
 </div>

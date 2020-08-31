@@ -1,0 +1,28 @@
+{% extends 'user_profile/base.html' %}
+
+{% block body %}
+    <div id="story" onload="grabStoryContents()">
+        
+        <div class="left">
+            <h1 id='new-content-heading'>{{ story.heading }}</h1>
+            <p>{{ story.body }}</p>
+            <button id="new-question-btn" onclick="newQuestion()">New Question</h1>
+            </div>
+    
+        <div class="right questions" >
+            {% for content in all_questions %}
+                <div>
+                    <h3>{{ content.question}}</h3>
+                    <div>
+                        {% for answer in content.answers  %}
+                            <input type="radio" id="{{ answer }}" name="{{ foorloop.counter }}" value="{{ answer }}">
+                            <label for="{{ answer}}"> {{ answer }}</label><br>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock body %}
