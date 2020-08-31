@@ -9,19 +9,24 @@
 </head>
 <body>
     {% block nav %}
-        
+    <nav class="navbar">
+        <div class="nav-logo">
+            <h1>Youngstars MCQ</h1>
+        </div>
+
+        <div class="nav-items">
+            <ul>
+                {% block items %}
+                <li class="add" onclick="addStory()">Manage Stories</li>
+                {% endblock items %}
+            </ul>
+        </div>
+    </nav>
     {% endblock nav %}
     {% block body %}
-        <div class="body">
-            
-        </div>
-        {% endblock body %}
-    <div>
-        {% block unpadded-body %}
-            
-        {% endblock unpadded-body %}
-    
-    </div>
+
+    {% endblock body %}
+
     <script src="{% static 'index.js' %}"></script>
 </body>
 </html>

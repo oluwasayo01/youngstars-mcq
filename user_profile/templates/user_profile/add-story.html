@@ -1,21 +1,21 @@
 {% extends 'user_profile/base.html' %}
 
-{% block unpadded-body %}
-<div class="unpadded-body">
+{% block body %}
+<div class="add-body">
     <div class="left">
-        <form method="POST" id="form">
+        <div id="form">
             {% csrf_token %}
             <label for="heading">Title</label>
-            <textarea name="heading" id="" cols="100" rows="1"></textarea>
+            <textarea name="heading" id="heading" cols="80" rows="2"></textarea>
             <label for="body">Body</label>
-            <textarea name="body" id="" cols="100" rows="10"></textarea>
+            <textarea name="body" id="body" cols="100" rows="10"></textarea>
     
             
-            <button class="create-story-btn" onclick="">Create Story</button>
-        </form>
-        <div class="question">
-            <button onclick="newQuestion()" on>Add question</button>
+            <button class="create-story-btn" onclick="createStory()">Create Story</button>
         </div>
+        <!-- <div class="question">
+            <button onclick="newQuestion()" on>Add question</button>
+        </div> -->
 
     </div>
     <div class="right questions">
@@ -24,4 +24,4 @@
 
 </div>
     
-{% endblock unpadded-body %}
+{% endblock body %}

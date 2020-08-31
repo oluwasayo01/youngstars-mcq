@@ -1,28 +1,18 @@
 {% extends 'user_profile/base.html' %}
 
-{% block nav %}
-    <nav class="navbar">
-        <div class="nav-logo">
-            <h1>Youngstars MCQ</h1>
-        </div>
-        <div class="nav-items">
-            <ul>
-                <li class="add" onclick="addStory()">Add Story</li>
-            </ul>
-        </div>
-    </nav>
-    
-{% endblock nav %}
 
 {% block body %}
-    <h1>Stories</h1>
-    <ul class="stories-list">
-        {% for story in stories %}
-            <li class="story">
-                <h2 class="story-title">{{ story.heading }}</h2>
-                <button class="story-btn" onclick="handleClick(this)" value="{{ story.id }}">Take Test</button>
-            </li>
-            
-        {% endfor %}
-     </ul>
+    <div class="stories-body">
+        <h1>Stories</h1>
+        <ul class="stories-list">
+            {% for story in stories %}
+                <li class="story">
+                    <h2 class="story-title">{{ story.heading }}</h2>
+                    <button class="story-btn" onclick="handleClick(this)" value="{{ story.id }}">Take Test</button>
+                </li>
+                
+            {% endfor %}
+         </ul>
+
+    </div>
 {% endblock body %}

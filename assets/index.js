@@ -38,3 +38,28 @@ const addQuestion = () => {
     const questions = document.querySelector('.questions')
 
 }
+
+
+const createStory = () => {
+    const heading = document.querySelector("#heading")
+    const body = document.querySelector("#body")
+    if (!heading.value || !body.value || heading.value.length < 10 || body.value.length < 100) {
+        alert("Enter valid heading and body texts. Story may be too short.")
+    } else {
+        const data = {heading, body}
+        fetch('http://localhost:8000/mcq/create-story', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        })
+        .then(resp => resp.data)
+        .then(res => {
+            if (res.status == 200) {
+                console.log(success)
+            }
+        }).catch( error => console.log(error))
+
+    }
+}

@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
-.body {
+.stories-body {
     background-color: azure;
     padding: 0 10%;
+    width: 100%;
 }
 
 h1 {
@@ -70,9 +71,8 @@ li.option {
     list-style-type: none;
 }
 
-.unpadded-body {
-    padding: 5%;
-    width: 100vw;
+.add-body {
+    padding: 1% 5% 0 5%;
     display: flex;
 
 }
@@ -80,6 +80,8 @@ li.option {
 .left {
     width: 50vw;
     height: 100vh;
+    padding: 0 0%;
+    /* background-color: green; */
 
 }
 
@@ -87,4 +89,23 @@ li.option {
     width: 50vw;
     height: 100vh;
     background-color: blue;
+}
+
+
+.nav-items {
+    margin-right: 20px;
+}
+
+.add:hover {
+    cursor: pointer;
+}
+
+
+textarea[name="heading"] {
+    /* text-justify: auto; */
+    font-size: large;
+}
+
+.create-story-btn {
+    /* justify-content: end; */
 }
